@@ -18,17 +18,17 @@ public class storeProject {
 		if (items.containsKey(itemName)) {
 			Double itemPrice = items.get(itemName);
 			System.out.println("Adding " + itemName + " to cart at $" + itemPrice);
-			System.out.println("");
+			System.out.println(""); // create line space
 			orderNames.add(itemName);
 			orderPrices.add(itemPrice);
 		}
 		else {
 			System.out.println("This item doesn't exist. Please try again.");
 		}
-		System.out.print("Do you want to add another item to your cart? (y/n): ");
+		System.out.print("Do you want to add another item to your cart? (y/n): "); // if not answer does not contain y, assumed user meant no, so break loop
 		String addAnotherItem = JavaInput.nextLine();
 		if (addAnotherItem.contains("y")) {
-			System.out.println("");
+			System.out.println(""); // create line space
 			continue;
 		}
 		else {
@@ -39,7 +39,7 @@ public class storeProject {
 				System.out.println(orderNames.get(i) + "\t" + orderPrices.get(i));
 				}
 		}
-			System.out.println("");
+			System.out.println(""); // create line space
 			averageCost();
 			highestCost();
 			lowestCost();
@@ -63,7 +63,7 @@ public class storeProject {
 		for (Map.Entry<String, Double> entry: items.entrySet())
 			System.out.println(entry.getKey() + "\t" + entry.getValue());
 	}
-	private static void averageCost() {
+	private static void averageCost() { // method to find average cost of items in user shopping cart
 		double totalCost = 0;
 		for(Double orderPrice : orderPrices)
 		    totalCost += orderPrice;
@@ -71,17 +71,17 @@ public class storeProject {
 		double averageCost = totalCost / numberOfItems;
 		System.out.println("Average price per item in order was " + averageCost + ".");	
 	}
-	private static void lowestCost() {
+	private static void lowestCost() { // method to find lowest item cost user shopping cart
 		double lowestCost = Double.MAX_VALUE;
 		for(Double orderPrice : orderPrices) {
 		    if (orderPrice < lowestCost) {
 		    	lowestCost = orderPrice;
 		    }
 		}
-		int index = orderPrices.indexOf(lowestCost);
+		int index = orderPrices.indexOf(lowestCost); 
 		System.out.println("Lowest priced item cost was " + orderNames.get(index) + " with a cost of " + lowestCost + ".");
 	}
-	private static void highestCost() {
+	private static void highestCost() { // method to find highest item cost user shopping cart
 		double highestCost = Double.MIN_VALUE;
 		for(Double orderPrice : orderPrices) {
 		    if (orderPrice > highestCost) {
