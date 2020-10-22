@@ -79,7 +79,7 @@ public class storeProject {
 		    }
 		}
 		int index = orderPrices.indexOf(lowestCost); 
-		System.out.println("Lowest priced item cost was " + orderNames.get(index) + " with a cost of " + lowestCost + ".");
+		System.out.println("Lowest priced item was " + orderNames.get(index) + " with a cost of " + lowestCost + ".");
 	}
 	private static void highestCost() { // method to find highest item cost user shopping cart
 		double highestCost = Double.MIN_VALUE;
@@ -89,6 +89,6 @@ public class storeProject {
 		    }   
 		}
 		int index = orderPrices.indexOf(highestCost);
-		System.out.println("Highest priced item cost was " + orderNames.get(index) + " with a cost of " + highestCost + ".");
+		System.out.println("Highest priced item was " + orderNames.get(index) + " with a cost of " + highestCost + ".");
 	}
 }
